@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-color:#222;
+    color: antiquewhite;
+    margin: 1rem auto;
+    font-size: 16px;
+}
+
+#showContainer{
+    border: 2px dotted antiquewhite;
+    border-radius:2rem;
+    height:4rem;
+    text-align:center;
+    margin:1rem;
+    padding-top:2rem;
+}
+#serverContainer{
+    border: 2px solid antiquewhite;
+    border-radius:1rem;
+    height:4rem;
+    margin:0 auto;
+    text-align:center;
+    margin:1rem;
+    padding-top:2rem;
+    font-size: 24px;
+    font-weight: 700;
+
+}
