@@ -1,4 +1,27 @@
-<button  type="button"   class="btn btn-outline-success btn-lg" style="box-shadow: 5px 5px 5px gray; margin:1rem;"   >Add server</button>
+<!--Get Server name from user-->
+<div style="text-align: center; margin-top:1rem;">
+    <p>Please enter a server name:</p>
+<input type="text"
+    id="frmServerNameInput"
+    class="form-control"
+    [(ngModel)]="serverName"
+>
+</div><!--end wrapping div for styling perps-->
+
+<!--FOR TESTING ONLY: Display user input one key at a time-->
+<!-- <p style="margin-top: 1rem;">{{ serverName }}</p> -->
+
+<button  type="button" class="btn btn-outline-success btn-lg"
+    style="box-shadow: 5px 5px 5px gray; 
+    margin:1rem;"    
+    id="#btnAddNewServer"
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()"
+    >Add server
+</button>
+
+<!--show current server creation status-->
+<p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
-<br>
+<div style="margin-top:2rem;"></div>
 <app-server></app-server>

@@ -1,22 +1,37 @@
-<div class="container" style="text-align:center;">
-  
-  <div class="row" >
+  <!--
+    --Version 1.0
+    --Purpose: Exploratory re-examination of Node in current 2021 format
+    --App-component acting as interface for other nested components
+    --Bootstrap 4.6.1 used as responsive framework, within inherited dependencies of current vesions of Popperjs & JQuery (2.11.0 & 3.6.0 resp.)
+    --can be ported over directly into /src/ folder in an MS enviro. folder tree
+    --Auth:  Scott A. Hyslop, PocketNerds
+    --Date of inception: 11/30/21
+  -->
+  <div class="container"  id="content" style="text-align:center;">
+  <!--Header row-->
+  <div class="row">
     <div class="col-sm-12"><h1>This will be the header</h1><!--end col-->
   </div><!--end row01-->
   </div>
   
+  <!--Alert-success row-->
   <div class="row">
     <div class="col-sm-12"><app-alert-success></app-alert-success></div>
   </div><!--end row02-->
+
+  <!--Alert-warning row-->
   <div class="row">
     <div class="col-sm-12"><app-alert-warning></app-alert-warning></div>
   </div><!--end row03-->
+
+  <!--Servers row-->
   <div class="row">
     <div class="col-sm-12"><app-servers></app-servers></div>
   </div><!--end row04-->
   
+  <!--Footer row-->
   <div class="row">
     <div class="col-sm-12"><h1>This will be the footer</h1></div>
   </div><!--end row05-->
   
-</div><!--end container-->
+</div><!--end Content-->
