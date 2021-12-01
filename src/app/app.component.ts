@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular2021Tryout';
+
+    showHipster = false;
+    log: any[] = [];
+
+    onToggleDisplay(){
+      this.showHipster = !this.showHipster;
+      this.log.push(new Date());
+    }
 }

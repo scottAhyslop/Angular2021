@@ -28,10 +28,53 @@
   <div class="row">
     <div class="col-sm-12"><app-servers></app-servers></div>
   </div><!--end row04-->
-  
-  <!--Footer row-->
-  <div class="row">
+   <!--Footer row-->
+   <div class="row">
     <div class="col-sm-12"><h1>This will be the footer</h1></div>
   </div><!--end row05-->
+
+  <!--demo row for new ideas scratchpad-->
   
-</div><!--end Content-->
+    
+  </div><!--end content-->
+
+
+  <hr>
+<div class="container">
+  <div class="row">
+    <!--button col-->
+   <!--  <div class="div col-sm-6">
+      <button
+        class="btn btn-outline-primary btn=lg"
+        (click)="showHipster =!showHipster"
+      >
+      Show Details
+      </button>
+
+    </div> -->
+
+    <div class="div col-sm-6">
+      <button
+        class="btn btn-outline-danger btn=lg"
+        (click)="onToggleDisplay()"
+      >
+      Show Details
+      </button>
+
+    </div>
+
+    <!--display col-->
+    <div class="div col-sm-6" 
+      *ngFor="let logItem of log; let i = index"
+      [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+      [ngClass]="{'green-text': i >= 4}"
+      >
+      {{ logItem}}
+     <!--  <h6>Hipster Up!</h6>
+      <p >Laboris single-origin coffee polaroid activated charcoal, fingerstache unicorn . Messenger bag letterpress.</p> -->
+    </div>
+  </div>
+</div>
+  
+
+

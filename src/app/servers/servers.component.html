@@ -37,29 +37,29 @@
     <div class="row">
         <div class="col-sm-12">
             <p>Please enter a user name:</p>
-        <input type="text"
-            id="frmUserNameInput"
-            class="form-control"
-            [(ngModel)]="userName"
-        >
-        <!--FOR TESTING ONLY: Display user input one key at a time-->
-        <!-- <p style="margin-top: 1rem;">{{ userName }}</p> -->
+            <input type="text"
+                id="frmUserNameInput"
+                class="form-control"
+                [(ngModel)]="userName"
+            >
+            <!--FOR TESTING ONLY: Display user input one key at a time-->
+            <!-- <p style="margin-top: 1rem;">{{ userName }}</p> -->
 
-        <button  type="button" class="btn btn-outline-warning btn-lg"
-            style="box-shadow: 5px 5px 5px gray; 
-            margin:1rem;"    
-            id="#btnAddNewUser"
-            [disabled]="userName === ''"
-            (click)="onCreateUser()"
-            >Add User
-        </button>
+            <button  type="button" class="btn btn-outline-warning btn-lg"
+                style="box-shadow: 5px 5px 5px gray; 
+                margin:1rem;"    
+                id="#btnAddNewUser"
+                [disabled]="userName === ''"
+                (click)="onCreateUser()"
+                >Add User
+            </button>
 
-        <!--show current server creation status-->
-        <p *ngIf="userCreated">{{ userCreationStatus }}</p>
-        <!--else for the ngIf; else noUser-->
-        <!-- <ng-template #noUser>
-            <p style="color: orange; text-shadow: 0.5px 0.5px antiquewhite;">No user created!</p>
-        </ng-template> -->
+            <!--show current server creation status-->
+            <p *ngIf="userCreated">{{ userCreationStatus }}</p>
+            <!--else for the ngIf; else noUser-->
+            <!-- <ng-template #noUser>
+                <p style="color: orange; text-shadow: 0.5px 0.5px antiquewhite;">No user created!</p>
+            </ng-template> -->
         </div><!--end col01-->
     </div><!--end row01-->
 </div><!--end wrapping container-->
