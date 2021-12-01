@@ -1,5 +1,24 @@
 <div class="container" id="serverContainer">
     <div class="row">
-        <div class="col-sm-12">Server {{serverId}}:  Status <span style="color: orange;">{{ getServerStatus() }}</span></div>
-    </div>
+        <div class="col-sm-4">
+            <button  type="button" class="btn btn-outline-primary btn-lg"
+                style="box-shadow: 5px 5px 5px gray; 
+                margin:1rem;"    
+                (click)="showDetails = !showDetails"
+
+            >Show Details
+            </button>
+        </div>
+        <div class="col-sm-4" *ngIf="showDetails">
+            <p>Server Status: {{ serverStatus}}</p>
+            <p> Server ID: {{ serverId }}</p>
+        </div>
+        <div class="col-sm-4">
+            <p>Server {{ serverId }}:  Status 
+            <span [ngStyle]="{color: getColor()}"
+                [ngClass] = "{online: serverStatus ==='online'}"
+            >
+            {{ getServerStatus() }}</span></p>
+        </div><!--end col01-->
+    </div><!--end row01-->
 </div>

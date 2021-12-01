@@ -1,27 +1,69 @@
-<!--Get Server name from user-->
-<div style="text-align: center; margin-top:1rem;">
-    <p>Please enter a server name:</p>
-<input type="text"
-    id="frmServerNameInput"
-    class="form-control"
-    [(ngModel)]="serverName"
->
-</div><!--end wrapping div for styling perps-->
+<!--SERVER NAME section-->
+<div class="container">
+    <!--Get Server name from user-->
+   
+    <div class="row">
+        <div class="col-sm-12" style="text-align: center; margin-top:1rem;">
+            <p>Please enter a server name:</p>
+            <input type="text"
+                id="frmServerNameInput"
+                class="form-control"
+                [(ngModel)]="serverName"
+            >
+            
+            <button  type="button" class="btn btn-outline-success btn-lg"
+                style="box-shadow: 5px 5px 5px gray; 
+                margin:1rem;"    
+                id="#btnAddNewServer"
+                [disabled]="serverName === ''"
+                (click)="onCreateServer()"
+                >Add server
+            </button>
+            <!--show current server creation status-->
+            <p *ngIf="serverCreated">{{ serverCreationStatus }}</p>
+            <!--else for the *ngIf ; else noServer-->
+            <!-- <ng-template #noServer>
+            <p style="color: orange; text-shadow: 0.5px 0.5px antiquewhite;">No server was created!</p>
+            </ng-template> -->
+        </div><!--end col01-->
+    </div><!--end row01-->
 
-<!--FOR TESTING ONLY: Display user input one key at a time-->
-<!-- <p style="margin-top: 1rem;">{{ serverName }}</p> -->
+    <!--FOR TESTING ONLY: Display user input one key at a time-->
+    <!-- <p style="margin-top: 1rem;">{{ serverName }}</p> -->    
+</div><!--end wrapping container-->
 
-<button  type="button" class="btn btn-outline-success btn-lg"
-    style="box-shadow: 5px 5px 5px gray; 
-    margin:1rem;"    
-    id="#btnAddNewServer"
-    [disabled]="!allowNewServer"
-    (click)="onCreateServer()"
-    >Add server
-</button>
+<!--USERNAME Section-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <p>Please enter a user name:</p>
+        <input type="text"
+            id="frmUserNameInput"
+            class="form-control"
+            [(ngModel)]="userName"
+        >
+        <!--FOR TESTING ONLY: Display user input one key at a time-->
+        <!-- <p style="margin-top: 1rem;">{{ userName }}</p> -->
 
-<!--show current server creation status-->
-<p>{{ serverCreationStatus }}</p>
-<app-server></app-server>
+        <button  type="button" class="btn btn-outline-warning btn-lg"
+            style="box-shadow: 5px 5px 5px gray; 
+            margin:1rem;"    
+            id="#btnAddNewUser"
+            [disabled]="userName === ''"
+            (click)="onCreateUser()"
+            >Add User
+        </button>
+
+        <!--show current server creation status-->
+        <p *ngIf="userCreated">{{ userCreationStatus }}</p>
+        <!--else for the ngIf; else noUser-->
+        <!-- <ng-template #noUser>
+            <p style="color: orange; text-shadow: 0.5px 0.5px antiquewhite;">No user created!</p>
+        </ng-template> -->
+        </div><!--end col01-->
+    </div><!--end row01-->
+</div><!--end wrapping container-->
+
+<app-server *ngFor="let server of servers" ></app-server>
 <div style="margin-top:2rem;"></div>
-<app-server></app-server>
+

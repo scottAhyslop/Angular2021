@@ -1,5 +1,10 @@
-#frmServerNameInput {
+#frmServerNameInput, #frmUserNameInput {
     margin-left: auto;
     margin-right: auto;
     width: 15rem;
+}
+
+#noServer, #noUser {
+    color: orange;
+    text-shadow:  0.25 px 0.25px antiquewhite;
 }
